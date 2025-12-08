@@ -7,7 +7,7 @@ app.use(express.json());
 
 const filedir = path.join(__dirname, "files");
 
-// Create folder if missing
+
 if (!fs.existsSync(filedir)) {
   fs.mkdirSync(filedir);
 }
@@ -44,9 +44,7 @@ app.get("/files/:filename", function (req, res) {
   });
 });
 
-// ---------------------------------------------------
-// POST /file → create a new file
-// ---------------------------------------------------
+
 app.post("/files", function (req, res) {
   const name = req.body.filename;
   const content = req.body.content;
