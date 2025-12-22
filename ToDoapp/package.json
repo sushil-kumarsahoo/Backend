@@ -1,0 +1,15 @@
+{
+  "name": "todoapp-backend",
+  "version": "1.0.0",
+  "description": "\"this is a simple todo application backend\"",
+  "license": "ISC",
+  "author": "\"sushil kumar\"",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
