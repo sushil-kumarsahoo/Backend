@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('')
+mongoose.connect('mongodb+srv://sushilkumar:Sushils9@cluster0.tnacnax.mongodb.net/courses')
 
 const AdminSchema = new mongoose.Schema({
     username: String,
