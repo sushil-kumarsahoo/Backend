@@ -8,8 +8,11 @@ export function Todos({todos}){
                 onClick={() => {
                     fetch("http://localhost:3000/completed", {
                         method:"PUT",
+                        body: JSON.stringify({
+                            id: todo._id
+                        }),
                         headers:{
-                            "content-type":"application.json"
+                            "content-type":"application/json"
                         }
                     })
                     .then( () => {
