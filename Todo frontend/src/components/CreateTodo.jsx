@@ -9,7 +9,6 @@ export function CreateTodo() {
         type="text"
         placeholder="Title"
         onChange={function (e) {
-          const value = e.target.value;
           setTitle(e.target.value);
         }}
       />{" "}
@@ -18,7 +17,7 @@ export function CreateTodo() {
         type="text"
         placeholder="description"
         onChange={function (e) {
-          const value = e.target.value;
+          
           setDescription(e.target.value);
         }}
       />
