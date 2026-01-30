@@ -1,12 +1,13 @@
-export function Todos({todos}){
+export function Todos({todos,setTodos}){
     return <div>
         {todos.map(function(todo){
-            return <div>
+            return <div key={todo._id}>
                 <h1>{todo.title}</h1>
                 <h2>{todo.description}</h2>
                 <button 
                 onClick={() => {
-                    fetch("http://localhost:3000/completed", {
+                      console.log("Sending id:", todo._id);
+                 fetch("http://localhost:3000/completed", {
                         method:"PUT",
                         body: JSON.stringify({
                             id: todo._id
@@ -16,7 +17,10 @@ export function Todos({todos}){
                         }
                     })
                     .then( () => {
-                        alert("Todo completed");
+                        setTodos(prev => prev.map(
+                            t=> t._id === todo._id ?
+                            {...t, completed: true} : t
+                        ) )
                     });
                 }}
                 >{todo.completed == true ? "completed" : "mark as completed"}</button>
