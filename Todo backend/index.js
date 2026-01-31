@@ -57,4 +57,19 @@ completed:true
   })
 }) 
 
+app.get("/todo/:id", async function(req,res){
+  const id = req.params.id;
+
+  const Foundtodo = await todo.findById(id);
+
+  if(!Foundtodo){
+    return res.status(404).json({
+      msg:"todo not found"
+    });
+  }
+  res.json({
+    todo: Foundtodo
+  })
+})
+
 app.listen(3000);

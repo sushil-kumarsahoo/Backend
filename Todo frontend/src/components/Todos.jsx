@@ -1,7 +1,8 @@
-export function Todos({todos,setTodos}){
+export function Todos({todos,setTodos,onTodoClick}){
     return <div>
         {todos.map(function(todo){
-            return <div key={todo._id}>
+            return <div key={todo._id}
+            onClick={() => {onTodoClick(todo._id)}}>
                 <h1>{todo.title}</h1>
                 <h2>{todo.description}</h2>
                 <button 
